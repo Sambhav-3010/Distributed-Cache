@@ -1,0 +1,18 @@
+{
+  "name": "cachegrid-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CacheGrid backend workspace",
+  "type": "module",
+  "workspaces": [
+    "cache-node"
+  ],
+  "scripts": {
+    "start": "npm --workspace cache-node run start",
+    "dev": "npm --workspace cache-node run dev",
+    "test": "npm --workspace cache-node test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

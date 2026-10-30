@@ -1,0 +1,25 @@
+services:
+  cache-node:
+    build:
+      context: ./backend
+      dockerfile: cache-node/Dockerfile
+    container_name: cachegrid-cache-node
+    environment:
+      NODE_ENV: production
+      PORT: 8000
+      CACHE_NODE_ID: node-1
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://localhost:8000/health').then((r) => { if (!r.ok) process.exit(1); }).catch(() => process.exit(1));",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
