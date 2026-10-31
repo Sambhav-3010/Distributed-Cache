@@ -5,12 +5,19 @@
   "description": "CacheGrid backend workspace",
   "type": "module",
   "workspaces": [
-    "cache-node"
+    "common-library",
+    "cache-node",
+    "gateway-service"
   ],
   "scripts": {
     "start": "npm --workspace cache-node run start",
+    "start:cache": "npm --workspace cache-node run start",
+    "start:gateway": "npm --workspace gateway-service run start",
     "dev": "npm --workspace cache-node run dev",
-    "test": "npm --workspace cache-node test"
+    "dev:gateway": "npm --workspace gateway-service run dev",
+    "test": "npm test --workspaces --if-present",
+    "test:cache": "npm --workspace cache-node test",
+    "test:gateway": "npm --workspace gateway-service test"
   },
   "engines": {
     "node": ">=22"

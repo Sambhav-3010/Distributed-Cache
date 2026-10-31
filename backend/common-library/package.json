@@ -1,0 +1,17 @@
+{
+  "name": "@cachegrid/common",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared CacheGrid contracts and utilities",
+  "exports": {
+    ".": "./src/index.js",
+    "./errors": "./src/errors.js",
+    "./events": "./src/events.js",
+    "./ids": "./src/ids.js",
+    "./latency": "./src/latency.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
